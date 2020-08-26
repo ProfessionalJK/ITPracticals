@@ -1,0 +1,54 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    19:28:30 08/20/2011 
+-- Design Name: 
+-- Module Name:    basic_gates - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+---- Uncomment the following library declaration if instantiating
+---- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity basic_gates is
+    Port ( A : in  STD_LOGIC;
+           B : in  STD_LOGIC;
+           C : out  STD_LOGIC;
+           D : out  STD_LOGIC;
+			  E : out  STD_LOGIC;
+           F : out  STD_LOGIC;
+			  G : out  STD_LOGIC;
+			  H : out  STD_LOGIC;
+           N : out  STD_LOGIC);
+end basic_gates;
+
+architecture Behavioral of basic_gates is
+
+begin
+C<= A AND B;
+D<= A OR B;
+E<= A XOR B;
+F<= A NAND B;
+G<= A NOR B;
+H<= A XNOR B;
+N<= NOT A;
+
+end Behavioral;
+

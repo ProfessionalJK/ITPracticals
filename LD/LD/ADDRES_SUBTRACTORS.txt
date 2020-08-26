@@ -1,0 +1,55 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    19:55:11 08/20/2011 
+-- Design Name: 
+-- Module Name:    all_adders_subtractors - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+---- Uncomment the following library declaration if instantiating
+---- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity all_adders_subtractors is
+    Port ( A : in  STD_LOGIC;
+           B : in  STD_LOGIC;
+           C : in  STD_LOGIC;
+           SHA : out  STD_LOGIC;
+           SFA : out  STD_LOGIC;
+           CHA : out  STD_LOGIC;
+           CFA : out  STD_LOGIC;
+           DHS : out  STD_LOGIC;
+           DFS : out  STD_LOGIC;
+           BHS : out  STD_LOGIC;
+           BFS : out  STD_LOGIC);
+end all_adders_subtractors;
+
+architecture Behavioral of all_adders_subtractors is
+
+begin
+SHA<= A XOR B;
+SFA<= A XOR B XOR C;
+CHA<= A AND B;
+CFA<= (A AND B) OR (B AND C) OR (C AND A);
+DHS<= A XOR B;
+DFS<= A XOR B XOR C;
+BHS<= (NOT A) AND B;
+BFS<= (NOT A) AND (B XOR C) AND (B AND C);
+end Behavioral;
