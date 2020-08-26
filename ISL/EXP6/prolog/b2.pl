@@ -1,0 +1,2 @@
+woman(sneha).
+man(raj).

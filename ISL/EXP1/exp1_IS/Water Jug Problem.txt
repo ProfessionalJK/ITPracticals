@@ -1,0 +1,94 @@
+/*Available water 9L and 4L galon. Draw Rule table for 1L,2L,3L,6L,7L jug*/
+Rule Table
+1. (x,y)->(9,y)		Fill 9gallon jug if 9gallon jug is not empty
+	if x<9
+2. (x,y)->(x,4)		Fill 4gallon jug if 4gallon jug is not empty
+	if x<4
+3. (x,y)->(x-d,y)		Pour some amount of water out of 9gallon jug if 9gallon jug is not empty
+	if x>0
+4. (x,y)->(x,y-d)		Pour some amount of water out of 4gallon jug if 4gallon jug is not empty
+	if y>0
+5. (x,y)->(0,y)		Empty 9gallon jug on ground if 9gallon jug is not empty
+	if x>0
+6. (x,y)->(x,0)		Empty 4gallon jug on ground if 4gallon jug is not empty
+	if y>0
+7. (x,y)->(9,y-(9-x))		Pour water from 4gallon jug into 9gallon jug untill the 9gallon jug is not full.If the combined conetent is >=9 and 4gallon jug is not empty
+	if (x+y)>=9 & y>0
+8. (x,y)->(x-(4-y),4)		Pour water from 9gallon jug into 4gallon jug untill the 4gallon jug is not full.If the combined conetent is >=4 and 9gallon jug is not empty
+	if (x+y)>=4 & x>0
+9. (x,y)->(x+y,0)		Pour water from 4gallon jug into 9gallon jug. If the combined conetent is <=9 and 4gallon jug is not empty
+	if (x+y)<=9 & y>0
+10. (x,y)->(0,x+y)		Pour water from 9gallon jug into 4gallon jug. If the combined conetent is >=4 and 9gallon jug is not empty
+	if (x+y)>=4 & x>0
+
+/*Available solution to 1L jug*/
+9Gallon			4Gallon			Rule					TREE STRUCTURE
+9			0			1					(0,0)
+5			4			8				(9,0)		(0,4)	
+5			0			6			      (5,0)      (0,4)		
+1			4			8			  (1,0)  (0,4)        
+1			0			6
+
+/*Available solution to 2L jug*/
+9Gallon			4Gallon			Rule					TREE STRUCTURE
+9			0			1					(0,0)
+5			4			8				(9,0)		(0,4)	
+5			0			6			      (5,0)      (0,4)		
+1			4			8			  (1,0)  (0,4)        
+1			0			6		         (0,0) (0,1)
+0			1			10		      (9,0) (0,1)	
+9			1			1		   (6,0)  (0,4)			      
+6			4			8	          (2,0) (0,4)
+6			0			6		
+2			4			8
+2			0			6
+
+/*Available solution to 3L jug*/
+9Gallon			4Gallon			Rule					TREE STRUCTURE
+9			0			1					(0,0)
+5			4			8				(9,0)		(0,4)	
+5			0			6			      (5,0)      (0,4)		
+1			4			8			  (1,0)  (0,4)        
+1			0			6		         (0,0) (0,1)
+0			1			10		      (9,0) (0,1)	
+9			1			1		   (6,0)  (0,4)		
+6			4			8	          (2,0) (0,4)
+6			0			6 	        (0,0) (0,2)
+2			4			8	      (9,0) (0,2)
+2			0			6	    (7,0) (0,4)	
+0			2			10	   (3,0) (0,4)
+9			2			1	  
+7			4			8
+7			0			6
+3			4			8
+3			0			6
+
+/*Available solution to 6L jug*/
+9Gallon			4Gallon			Rule					TREE STRUCTURE
+9			0			1					(0,0)
+5			4			8				(9,0)		(0,4)	
+5			0			6			      (5,0)      (0,4)		
+1			4			8			  (1,0)  (0,4)        
+1			0			6		         (0,0) (0,1)
+0			1			10		      (9,0) (0,1)	
+9			1			1		   (6,0)  (0,4)	
+6			4			8
+6			0			6
+
+/*Available solution to 7L jug*/
+9Gallon			4Gallon			Rule					TREE STRUCTURE
+9			0			1					(0,0)
+5			4			8				(9,0)		(0,4)	
+5			0			6			      (5,0)      (0,4)		
+1			4			8			  (1,0)  (0,4)        
+1			0			6		         (0,0) (0,1)
+0			1			10		      (9,0) (0,1)	
+9			1			1		   (6,0)  (0,4)	
+6			4			8		(2,0) (0,4)
+6			0			6	        (0,0) (0,2)
+2			4			2	       (9,2)				
+2			0			6	    (7,0) (0,4)
+0			2			10           		
+9			2			1
+7			4			8
+7			0			6

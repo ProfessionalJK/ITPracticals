@@ -1,0 +1,3 @@
+man(raj).
+woman(shital).
+

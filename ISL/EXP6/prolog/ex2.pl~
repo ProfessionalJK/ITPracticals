@@ -1,0 +1,11 @@
+woman(shital).
+woman(jyoti).
+man(rahul).
+man(raj).
+playsAirGuitar(rahul).
+party.
+happy(raj).
+listens2Music(rahul).
+listens2Music(raj):-happy(raj).
+//playsAirGuitar(rahul):-listens2Music(rahul).
+//playsAirGuitar(raj):-listens2Music(raj).

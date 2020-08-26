@@ -1,0 +1,4 @@
+?-likes(apple,X).
+
+X=fruit.
+X=animal.
