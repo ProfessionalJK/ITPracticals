@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>My first AJAX application</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script>
+
+var XMLHttpRequestObj=false;
+if(window.XMLHttpRequest){
+	XMLHttpRequestObj=new XMLHttpRequest();		//create new object
+}else if(window.ActiveXObject){  				// for older browsers
+	XMLHttpRequestObj=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+function getData(dataSource,divID) 				// Request data from server and display it
+{
+	if(XMLHttpRequestObj){
+		var obj=document.getElementById(divID);
+		XMLHttpRequestObj.open("GET",dataSource); 	//specifies the type of request to the server
+		XMLHttpRequestObj.send();					//sends request to the server
+		XMLHttpRequestObj.onreadystatechange=function()		//callback function					
+		{
+			if(XMLHttpRequestObj.readyState==4 && XMLHttpRequestObj.status==200)
+			{
+				obj.innerHTML=XMLHttpRequestObj.responseText;			//get response from server
+			
+			}
+		}
+		
+	}
+
+
+}
+</script>
+
+
+</head>
+<body>
+<h1>First AJAX application</h1>
+<p>This example explains the partial update of a web page using AJAX technique as Rich Internet Application</p>
+<img src="image1.jpg" class="w3-round" onmouseover="getData('bangles.txt','targetDiv')">
+<img src="image2.jpg" onmouseover="getData('rings.txt','targetDiv')">
+<img src="image3.jpg" class="w3-round" onmouseover="getData('necklaces.txt','targetDiv')">
+
+<!--Contents of this <div> will be updated with dynamic text-->
+
+<div id="targetDiv" class="w3-panel w3-pink" style="width:60%">
+	<h1>Welcome to my jewellery showroom!!</h1>
+</div>
+
+<!--This <div> just displays static text -->
+
+<div class="w3-container">
+<h2>Some other text..</h2>
+<p>This is the web page of my jewellery showroom..</p>
+<p>This section is not going to change</p>
+<hr>
+</div>
+
+<p class="w3-container"> This explains the use of AJAX technique</p>
+
+
+</body>
+
+
+</html>

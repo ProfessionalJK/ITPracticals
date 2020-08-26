@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation Example</title>
+	<style>
+		.signup{
+			border:1px solid #999999;
+			font:normal 14px helvetica;
+			
+		}
+		body{
+		margin:10%;
+		background-color:powderblue;
+		}
+		h2{
+		color:green;
+		text-align:left;
+		margin:10px;
+		padding 25px;
+		}
+	</style>
+	<script src="validate_functions.js">
+			
+	</script>
+</head>
+<body> 
+<h2><u>Registration Form</u></h2>
+<table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee">
+	<th colspan="2" align="center">Signup Form</th>
+	<form method="post" action="adduser.html" onsubmit="return validate(this)">
+<tr><td>Firstname</td>
+<td><input type="text" maxlength="32" name="forename"></td></tr>
+<tr><td>Lastname</td>
+<td><input type="text" maxlength="32" name="surname"></td></tr>
+<tr><td>Username</td>
+<td><input type="text" maxlength="16" name="username"></td></tr>
+<tr><td>Password</td>
+<td><input type="password" maxlength="12" name="password"></td></tr>
+<tr><td>Age</td>
+<td><input type="text" maxlength="3" name="age"></td></tr>
+<tr><td>Email</td>
+<td><input type="text" maxlength="64" name="email"></td></tr>
+<tr><td colspan="2" align="center"><input type="submit" value="Signup"></td></tr>
+</form>
+</table>
+
+</body>
+</html>
