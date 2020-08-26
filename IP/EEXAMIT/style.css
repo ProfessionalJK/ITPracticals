@@ -1,0 +1,251 @@
+	@media only screen and (max-width: 959px)
+	{
+	    body{
+	          font-size:0.5em;
+	          
+	          margin: 0;
+	    }
+	    .header{
+	    	background-color: rgb(22,123,173);
+	    	font-family: inherit;
+		    color: white;
+		    font-size:1em;
+		    width: 100%;
+	    }
+	    .footer{
+  		    border-top:rgb(22,123,173) solid;
+  		    background-color: black;
+  		    color: white;
+  		    font-size: 1em;
+  		    font-family: monospace; 
+	    }
+	    .footer a:link,a:visited{
+		    text-decoration: none;
+		    color:cyan;
+	    }
+	    .footer a:hover {
+		    color: red;
+		    text-decoration: underline;
+	    }
+	    #index1{
+		    background-color: tomato;
+		    margin: 0;
+	    }
+	    .index1 h1{
+	        color:blue;
+	        font-weight:bold;
+	        text-align:center;
+	    }
+	    .index1 blockquote{
+	        font-weight: bold;
+	        color:black;
+	        text-align:left;
+	    }
+	    #signup{
+	        color:tomato;
+	        text-align:center;
+	        font-size:3em;
+	    }
+	    .signup table,th{
+	        text-align:left;
+	    }
+	    .signup select{
+	        width:147px;
+	    }
+	   .header img{
+	        width:100%;
+	    }
+	    .sub{
+        font-size:17px; 
+        text-align:center;
+      }
+	    
+	      
+     
+     
+	}
+	@media only screen and (max-width: 500px)
+	{
+	    
+      .result {
+         font-size:10px;
+         
+        }
+      .text{
+        font-size:17px; 
+        text-align:center;
+      }
+      .sub{
+         font-size: 25px;
+         color:tomato;
+      }
+    .start{
+        font-size:20px;
+    }
+    #myresult{
+         font-size: 25px;
+    }
+    #myresult1{
+         font-size: 25px;
+    }
+    .viewresult{
+        width:100%;
+    }
+    #select{
+        font-size:25px; 
+    }
+        
+    
+      .admin{
+        font-size:15px;   
+      }
+     .heading{
+        font-size:15px;   
+      }
+     .new{
+        font-size:15px;  
+      }
+      .footer{
+        width:100%;     
+     }
+      div{
+         margin-left: 50px;
+        }
+     
+}
+
+        
+    
+        
+         
+  
+ 	@media only screen and (min-width: 500px)
+  {
+    .text{
+        font-size:17px; 
+        text-align:center;
+    }
+    .sub{
+        font-size:25px; 
+        text-align:center;
+        color:tomato;
+      }
+    .start{
+        font-size:20px;
+    }
+    .heading{
+        font-size:15px;   
+      }
+        #select{
+         font-size:25px; 
+    }
+   
+   
+      
+   }
+     
+     
+	
+
+		@media only screen and (max-width: 800px)
+	{
+	}
+	
+       
+	body{
+		margin: 0;
+	}
+	.adminheader{
+		background-color: rgb(22,123,173);
+		font-family: inherit;
+		color: white;
+		font-size:1em;
+		width: 100%;
+	}
+	.header{
+		background-color: rgb(22,123,173);
+		font-family: inherit;
+		color: white;
+		font-size:1em;
+		width: 100%;
+	}
+	.footer{
+  		border-top:rgb(22,123,173) solid;
+  		background-color: black;
+  		color: white;
+  		font-size: 1em;
+  		font-family: monospace; 
+	}
+	.footer a:link,a:visited{
+		text-decoration: none;
+		color:cyan;
+	}
+	.footer a:hover {
+		color: red;
+		text-decoration: underline;
+	}
+	#index1{
+		background-color: tomato;
+		margin: 0;
+	}
+	.index1 h1{
+	    color:blue;
+	    font-weight:bold;
+	    text-align:center;
+	}
+	.index1 blockquote{
+	    font-weight: bold;
+	    color:black;
+	    text-align:left;
+	}
+	#signup{
+	    color:tomato;
+	    text-align:center;
+	    font-size:2em;
+	}
+	.signup table,th{
+	    text-align:left;
+	}
+	.signup select{
+	    width:147px;
+	}
+	#admin1{
+	    font-size:2em;
+	    font-family:serif;
+	    text-align:center;
+	    color:tomato;
+	}
+	.text{
+	    color:black;
+	    text-align: center;
+	    font-style: normal;
+	    
+	}
+	.text a:visited,a:link{
+	    color:red;
+	    text-decoration: none;
+	    font-size: 20px;
+	}
+	.errors h4{
+	    color:red;
+	}
+	#name{
+	    color:red;
+	    font-size: 18px;
+	}
+	#color{
+	    color:red;
+	    font-size: 18px;
+	     font-weight: bold;
+	}
+	.result{
+	    color:tomato;
+	    font-size:17px;
+	    font-weight: bold;
+	}
+    .admin a:link,a:visited{
+        color:purple;
+    }
+    .user a:link,a:visited{
+        color:purple;
+    }

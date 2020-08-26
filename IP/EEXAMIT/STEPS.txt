@@ -1,0 +1,22 @@
+STEPS FOR RUNNIG THE WEBSITE
+A)	FOR TEACHER/ADMIN 
+1) Go to
+	https://www.eexamit.000webhostapp.com/adminlogin.php
+2) Enter correct credentials if registered already else sign up
+3) For creating new test, select "Create New Test" and select branch,semester and subject. On next page enter proper name of the test and no of questions in the test.
+4) Add questions and thier answers with multiple options each.
+5) Once questions added successfully, proceed to home.
+6) For viewing results of previously created tests, click on view results. On the next page select proper branch,semester,subject and test. The result of that will be appeared on next page.
+7) In this way teacher can keep record of each test created.
+
+
+B)	FOR STUDENT/USER
+1) Go to
+	https://www.eexamit.000webhostapp.com
+2) Enter correct credentials if registered already else sign up
+3) For givining new test, select "Select Subject To Quiz" and select branch,semester,subject and test. On next page select proper options of each question in the test.
+4) Submit the test. It will show the result of the test. It can print the test result too.
+5) It can also see the result of previously completed test by click on "Result".
+
+All pages are available here.
+Enjoy coding.
