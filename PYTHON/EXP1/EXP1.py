@@ -1,0 +1,37 @@
+print("Demonstration of quotes")
+s1='Hello World'
+s2="Internet is not working"
+s3='''I asked, "Whose book is it?"
+She replied, "It is Wartikar's math book"'''
+print("s1=",s1)
+print("s2=",s2)
+print("s3=",s3)
+print("\nDemonstaration of variable")
+a=13
+b=5
+print("a=",a)
+print("b=",b)
+print("\nDemonstration of Basic Math Operators and Expressions")
+print("a+b=",a+b)
+print("a-b=",a-b)
+print("a*b=",a*b)
+print("a/b=",a/b)
+print("a%b=",a%b)
+print("a**b=",a**b)
+print("a//b=",a//b)
+print("a>b=",a>b)
+print("a<b=",a<b)
+print("a<=b=",a<=b)
+print("a>=b=",a>=b)
+print("a!=b=",a!=b)
+print("a==b=",a==b)
+print("\nComposite Operators")
+print("2*a+b=",2*a+b)
+print("\nDemonstration of range")
+print("range(7)=",list(range(7)))
+print("range(2,7)=",list(range(2,7)))
+print("range(2,10,2)=",list(range(2,10,2)))
+print("range(10,1,-1)=",list(range(10,1,-1)))
+print("range(10,1,-3)=",list(range(10,1,-3)))
+print("range(1,10,-3)=",list(range(1,10,-3)))
+print("range(10,1,2)=",list(range(10,1,2)))
