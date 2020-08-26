@@ -1,0 +1,30 @@
+<<	:	Insertion Operator
+>>	:	Extraction Operator
+::	:	Scope of Extaction 
+
++ can be used for objects addition too.
+Operator overloading:
+different operators that we use can perform the specific operations on primitive type of operators. e.g. + performs addidtion of int and float values by default.
+To extend the funcationality of these operators we can achieve operator overloading that will make those operators to perform similar operations on objects also.
+e.g. 	a	+	b
+	|	|	|
+	object	|	object
+	overloaded operator
+Exceptional case
+operator overloading is a compile time polymorphism.
+						Polimorphism in C++
+							|
+		|										|
+	Compile time										run time
+	|		|									|
+opeartor overlaoding	function overloading							function overriding
+
+Freind Function:
+
+Inhertiance:			Derivation Type
+		private		protected		public
+private		-		-			-
+protected	private		ptotected		protected		
+public		private		protected		public
+
+pure virtual function makes the super class abstract.
