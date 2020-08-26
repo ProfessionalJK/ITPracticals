@@ -1,0 +1,17 @@
+import mraa     # For accessing the GPIO
+import time     # For sleeping between blinks
+LED_AIO = 0                   # we are using D5 pin
+LED_GPIO=13
+sensor = mraa.Aio(LED_AIO) # Get the LED pin object
+blinkLed=mraa.Gpio(LED_GPIO)
+blinkLed.dir(mraa.DIR_OUT)     # Set the direction as output
+blinkLed.write(0)
+ 
+# One infinite loop coming up
+while True:
+    v=sensor.read()
+    if v<=150:
+        # LED is off, turn it on
+        blinkLed.write(1)      # LED is on
+    else:
+        blinkLed.write(0) 
