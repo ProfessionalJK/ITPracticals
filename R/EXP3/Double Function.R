@@ -1,0 +1,9 @@
+volume=function(r,l){
+  area=function(r){
+    a=r*r
+    return(a)
+  }
+  v=area(l)*3.14*r*l
+  return(v)
+}
+cat("Area=",volume(l=5,r=2))

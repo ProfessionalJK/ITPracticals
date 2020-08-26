@@ -1,0 +1,5 @@
+library(ggplot2)
+setwd("f:/exp6")
+fr = read.csv("lendingdata.csv")
+#print(fr)
+ggplot(fr,aes(x=lender_count,y=loan_amount))+geom_point()+geom_smooth()
