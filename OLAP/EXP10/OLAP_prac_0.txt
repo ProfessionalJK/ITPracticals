@@ -1,0 +1,194 @@
+Enter password: ******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1
+Server version: 5.6.23-log MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| test               |
+| world              |
++--------------------+
+6 rows in set (0.17 sec)
+
+mysql> create database DEMO;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| demo               |
+| mysql              |
+| performance_schema |
+| sakila             |
+| test               |
+| world              |
++--------------------+
+7 rows in set (0.09 sec)
+
+mysql> create table user(ID int,NAME varchar(20),AGE int,GENDER char(2),OCCUPATION_ID int,CITY_ID int);
+ERROR 1046 (3D000): No database selected
+mysql> use demo;
+Database changed
+mysql> create table user(ID int,NAME varchar(20),AGE int,GENDER char(2),OCCUPATION_ID int,CITY_ID int);
+Query OK, 0 rows affected (0.36 sec)
+
+mysql> create table occupation(OCCUPATION_ID int,OCCUPATION_NAME varchar(20));
+Query OK, 0 rows affected (1.86 sec)
+
+mysql> create table city(CITY_ID int,CITY_NAME varchar(20));
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> insert into user values(1,'JOHN',25,'M',1,3);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into user values(2,'SARA',30,'F',3,4);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into user values(3,'VICTOR',31,'M',2,5);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into user values(4,'JANE',27,'F',1,3);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into user occupation(1,'software engineer');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'occupation(1,'software engineer')' at line 1
+mysql> insert into user occupation values(1,'software engineer');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'occupation values(1,'software engineer')' at line 1
+mysql> insert into occupation values(1,'software engineer');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into occupation values(2,'accountant');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into occupation values(3,'pharmacist');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into occupation values(4,'library assistant');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into city values(1,'california');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into city values(2,'calgory');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into city values(3,'boston');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into city values(4,'newyork');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into city values(5,'toronto');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from user;
++------+--------+------+--------+---------------+---------+
+| ID   | NAME   | AGE  | GENDER | OCCUPATION_ID | CITY_ID |
++------+--------+------+--------+---------------+---------+
+|    1 | JOHN   |   25 | M      |             1 |       3 |
+|    2 | SARA   |   30 | F      |             3 |       4 |
+|    3 | VICTOR |   31 | M      |             2 |       5 |
+|    4 | JANE   |   27 | F      |             1 |       3 |
++------+--------+------+--------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> select * from occupation;
++---------------+-------------------+
+| OCCUPATION_ID | OCCUPATION_NAME   |
++---------------+-------------------+
+|             1 | software engineer |
+|             2 | accountant        |
+|             3 | pharmacist        |
+|             4 | library assistant |
++---------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from city;
++---------+------------+
+| CITY_ID | CITY_NAME  |
++---------+------------+
+|       1 | california |
+|       2 | calgory    |
+|       3 | boston     |
+|       4 | newyork    |
+|       5 | toronto    |
++---------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select NAME
+    -> from user
+    -> where AGE>25;
++--------+
+| NAME   |
++--------+
+| SARA   |
+| VICTOR |
+| JANE   |
++--------+
+3 rows in set (0.03 sec)
+
+mysql> select *
+    -> from user
+    -> where ID>2 AND AGE!=31;
++------+------+------+--------+---------------+---------+
+| ID   | NAME | AGE  | GENDER | OCCUPATION_ID | CITY_ID |
++------+------+------+--------+---------------+---------+
+|    4 | JANE |   27 | F      |             1 |       3 |
++------+------+------+--------+---------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select *
+    -> from user,occupation
+    -> where user.OCCUPATION_ID=occupation.OCCUPATION_ID;
++------+--------+------+--------+---------------+---------+---------------+-------------------+
+| ID   | NAME   | AGE  | GENDER | OCCUPATION_ID | CITY_ID | OCCUPATION_ID | OCCUPATION_NAME   |
++------+--------+------+--------+---------------+---------+---------------+-------------------+
+|    1 | JOHN   |   25 | M      |             1 |       3 |             1 | software engineer |
+|    4 | JANE   |   27 | F      |             1 |       3 |             1 | software engineer |
+|    3 | VICTOR |   31 | M      |             2 |       5 |             2 | accountant        |
+|    2 | SARA   |   30 | F      |             3 |       4 |             3 | pharmacist        |
++------+--------+------+--------+---------------+---------+---------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> select *
+    -> from user,occupation,city
+    -> where user.OCCUPATION_ID=occupation.OCCUPATION_ID AND user.CITY_ID=city.CITY_ID;
++------+--------+------+--------+---------------+---------+---------------+-------------------+---------+-----------+
+| ID   | NAME   | AGE  | GENDER | OCCUPATION_ID | CITY_ID | OCCUPATION_ID | OCCUPATION_NAME   | CITY_ID | CITY_NAME |
++------+--------+------+--------+---------------+---------+---------------+-------------------+---------+-----------+
+|    1 | JOHN   |   25 | M      |             1 |       3 |             1 | software engineer |       3 | boston    |
+|    4 | JANE   |   27 | F      |             1 |       3 |             1 | software engineer |       3 | boston    |
+|    2 | SARA   |   30 | F      |             3 |       4 |             3 | pharmacist        |       4 | newyork   |
+|    3 | VICTOR |   31 | M      |             2 |       5 |             2 | accountant        |       5 | toronto   |
++------+--------+------+--------+---------------+---------+---------------+-------------------+---------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select NAME,GENDER
+    -> from user,city
+    -> where user.CITY_ID=city.CITY_ID AND CITY_NAME='boston';
++------+--------+
+| NAME | GENDER |
++------+--------+
+| JOHN | M      |
+| JANE | F      |
++------+--------+
+2 rows in set (0.00 sec)
+
+mysql>
